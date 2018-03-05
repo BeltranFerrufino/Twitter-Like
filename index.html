@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Twitter Like</title>
+    <style media="screen">
+      body{
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+      }
+      .like{
+        cursor: pointer;
+        width: 50px;
+        height: 50px;
+        /* background-color: red; */
+        background-image: url("corazon.png");
+        /* background-size: x y ; */
+        background-size: 1450px 50px;
+        transform: scale(2);
+      }
+      .like.is-liked{
+        animation: like .8s steps(28) forwards;
+        /* background-position: right; */
+      }
+      @keyframes like {
+        0%{
+          /* transform: translateX(0); */
+          background-position: 0px 0px;
+        }
+        100%{
+          /* transform: translateX(100px); */
+          /* background-position: -2800px 0px; */
+          background-position: right;
+        }
+      }
+      @media screen and (max-width: 425px){
+        .like{
+          transform: scale(4);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="tweet-box">
+      <div class="like" id="corazon"></div>
+    </div>
+  </body>
+  <script type="text/javascript">
+    const liked = document.getElementById('corazon');
+    liked.addEventListener("click", function (event) {
+      // console.log(event);
+    // corazon.classList.add("is-liked");
+    corazon.classList.toggle("is-liked");
+    })
+
+  </script>
+</html>
